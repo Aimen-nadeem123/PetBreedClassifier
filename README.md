@@ -180,6 +180,14 @@ I also evaluated the model on 30 additional images.
 
 The external accuracy was lower than the main test accuracy. This shows that the model did not perform as well on these additional images.
 
+## Failure Case Analysis
+
+One failure case was `cat.4001.jpg`. The actual breed was **Persian**, but the model predicted **Russian Blue**, which was incorrect.
+
+I think this may have happened because the model did not recognize the important features of the Persian cat in that particular image. The image's background, lighting, angle, or visual quality may also have affected the prediction. These are possible reasons, and I would need to inspect the image to confirm the exact cause.
+
+To improve this, I would add more correctly labelled Persian and Russian Blue images from different sources, use data augmentation to expose the model to different image conditions, and fine-tune the model further. I would also check more incorrect predictions to understand which breeds the model struggles to distinguish.
+
 ## Limitations
 
 - Some breeds have similar appearances, which can lead to incorrect predictions.
